@@ -9,13 +9,30 @@ body {
     margin: 0;
     font-family: Arial;
     text-align: center;
-    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    
+    /* 🖼️ الصورة الخلفية */
+    background: url("IMG_20260426_144346_247.webp") no-repeat center center/cover;
+
     color: white;
     overflow: hidden;
 }
 
+/* 🔳 طبقة شفافة فوق الصورة باش النص يبان */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+}
+
 .container {
     margin-top: 100px;
+    position: relative;
+    z-index: 1;
 }
 
 button {
@@ -34,11 +51,12 @@ button {
     min-height: 100px;
 }
 
-/* 9lob mit7arka */
+/* ❤️ قلوب متحركة */
 .heart {
     position: absolute;
     color: pink;
     animation: float 5s linear infinite;
+    z-index: 1;
 }
 
 @keyframes float {
@@ -61,7 +79,7 @@ button {
 let messages = [
 " na3ref illi inti ta3ba barcha ama sada9ni ta3bik hatha ilkol bech iwali far7a❤️",
 "inti 9wiya akther milli tetssawer 💪",
-"ani mo2min bik ya ro7i illi inti bech tenja7  🌹",
+"ani mo2min bik ya ro7i illi inti bech tenja7 🌹",
 "wa3d mini inhar nja7ik injik w nifra7lik ya bb ❤️",
 "n7ibik w dima m3ak mahma issir 💖"
 ];
@@ -69,13 +87,15 @@ let messages = [
 let i = 0;
 
 function nextMessage() {
-    if (i < messages.length) {
-        document.getElementById("msg").innerHTML = messages[i];
-        i++;
+    document.getElementById("msg").innerHTML = messages[i];
+    i++;
+
+    if (i >= messages.length) {
+        i = 0;
     }
 }
 
-/* قلوب تطلع */
+/* ❤️ قلوب متحركة */
 setInterval(() => {
     let heart = document.createElement("div");
     heart.className = "heart";
