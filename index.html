@@ -5,22 +5,30 @@
 <title>lik inti❤️</title>
 
 <style>
-body {
+html, body {
+    height: 100%;
     margin: 0;
+}
+
+body {
     font-family: Arial;
     text-align: center;
-    
-    /* 🖼️ الصورة الخلفية */
+    height: 100vh;
+
+    /* 🖼️ الخلفية */
     background-image: url("https://raw.githubusercontent.com/salembougada8-sketch/Love-message/main/IMG_20260426_144346_247.webp");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
+    color: white;
+    overflow: hidden;
+}
 
-/* 🔳 طبقة شفافة فوق الصورة باش النص يبان */
+/* 🔳 طبقة شفافة لتحسين وضوح النص */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,7 +103,7 @@ function nextMessage() {
     }
 }
 
-/* ❤️ قلوب متحركة */
+/* ❤️ قلوب */
 setInterval(() => {
     let heart = document.createElement("div");
     heart.className = "heart";
