@@ -13,19 +13,22 @@ html, body {
 body {
     font-family: Arial;
     text-align: center;
-    height: 100vh;
 
-    /* 🖼️ الخلفية */
+    /* 🔥 إصلاح شامل للصورة */
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+
     background-image: url("https://raw.githubusercontent.com/salembougada8-sketch/Love-message/main/IMG_20260426_144346_247.webp");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
 
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-/* 🔳 طبقة شفافة لتحسين وضوح النص */
+/* 🔳 طبقة شفافة */
 body::before {
     content: "";
     position: fixed;
@@ -59,7 +62,7 @@ button {
     min-height: 100px;
 }
 
-/* ❤️ قلوب متحركة */
+/* ❤️ قلوب */
 .heart {
     position: absolute;
     color: pink;
