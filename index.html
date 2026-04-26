@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>lik inti❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+}
+
+.message {
+    margin-top: 30px;
+    font-size: 22px;
+    min-height: 100px;
+}
+
+/* 9lob mit7arka */
+.heart {
+    position: absolute;
+    color: pink;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-800px);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>ila ajmal inssana fi 7yati ❤️</h1>
+    <button onclick="nextMessage()">inzil lina ya ro7i 💌</button>
+    <div class="message" id="msg"></div>
+</div>
+
+<script>
+let messages = [
+" na3ref illi inti ta3ba barcha ama sada9ni ta3bik hatha ilkol bech iwali far7a❤️",
+"inti 9wiya akther milli tetssawer 💪",
+"ani mo2min bik ya ro7i illi inti bech tenja7  🌹",
+"wa3d mini inhar nja7ik injik w nifra7lik ya bb ❤️",
+"n7ibik w dima m3ak mahma issir 💖"
+];
+
+let i = 0;
+
+function nextMessage() {
+    if (i < messages.length) {
+        document.getElementById("msg").innerHTML = messages[i];
+        i++;
+    }
+}
+
+/* قلوب تطلع */
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = "100%";
+    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 500);
+</script>
+
+</body>
+</html>
