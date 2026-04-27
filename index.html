@@ -14,29 +14,24 @@ body {
     font-family: Arial;
     text-align: center;
 
-    /* 🔥 إصلاح شامل للصورة */
-    min-height: 100vh;
     width: 100%;
-    position: relative;
+    min-height: 100vh;
 
-    background-image: url("https://raw.githubusercontent.com/salembougada8-sketch/Love-message/main/IMG_20260426_144346_247.webp");
+    background: url("https://raw.githubusercontent.com/salembougada8-sketch/Love-message/main/IMG_20260426_144346_247.webp") no-repeat center center fixed;
     background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
 
     color: white;
     overflow-x: hidden;
 }
 
-/* 🔳 طبقة شفافة */
 body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
     z-index: 0;
 }
 
@@ -62,7 +57,6 @@ button {
     min-height: 100px;
 }
 
-/* ❤️ قلوب */
 .heart {
     position: absolute;
     color: pink;
@@ -75,10 +69,14 @@ button {
     100% {transform: translateY(-800px);}
 }
 </style>
-
 </head>
 
 <body>
+
+<!-- 🎵 الأغنية -->
+<audio id="music" loop>
+    <source src="https://raw.githubusercontent.com/salembougada8-sketch/Love-message/main/Issam%20Alnajjar%20-%20Hadal%20Ahbek.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
     <h1>ila ajmal inssana fi 7yati ❤️</h1>
@@ -96,9 +94,14 @@ let messages = [
 ];
 
 let i = 0;
+let music = document.getElementById("music");
 
 function nextMessage() {
     document.getElementById("msg").innerHTML = messages[i];
+
+    // 🔥 تشغيل الأغنية
+    music.play();
+
     i++;
 
     if (i >= messages.length) {
